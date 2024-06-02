@@ -1,18 +1,17 @@
-import { FishList } from './fishList.js'
-import { TipList } from './tipList.js'
-import { LocationList } from './locationList.js'
+import { multiplesOfThreeFish, multiplesOfFivesFish, regularFish } from './fishList.js';
+import { TipList } from './tipList.js';
+import { LocationList } from './locationList.js';
 
-// Generate the fish list
-const fishHTML = FishList()
+// Generate the fish lists
+const threeFishHTML = multiplesOfThreeFish();
+const fiveFishHTML = multiplesOfFivesFish();
+const regularFishHTML = regularFish();
 
-// // Generate the care tips
-const tipHTML = TipList()
+// Generate the care tips and location lists
+const tipHTML = TipList();
+const locationHTML = LocationList();
 
-// // Generate the location list
-const locationHTML = LocationList()
-
-// Render each HTML string to the correct DOM element
-document.getElementById("fishList").innerHTML = fishHTML;
+// Render the fish HTML strings to the correct DOM element
+document.getElementById("fishList").innerHTML = `${threeFishHTML}${fiveFishHTML}${regularFishHTML}`;
 document.getElementById("tipList").innerHTML = tipHTML;
 document.getElementById("locationList").innerHTML = locationHTML;
-

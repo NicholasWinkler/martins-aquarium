@@ -1,20 +1,12 @@
 /* layout.css */
 
-/* Ensure all elements use border-box sizing */
-*,
-*::before,
-*::after {
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-/* Apply general styles to the body */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* Style the header */
 header {
     background-color: #4CAF50;
     color: white;
@@ -22,41 +14,39 @@ header {
     padding: 1em;
 }
 
-/* Main layout styling */
 main {
     display: flex;
-    flex-wrap: wrap;
     padding: 20px;
     gap: 20px;
 }
 
-/* Styling for the content section (fish and locations) */
-#content {
+#leftColumn {
     flex: 2;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Fish container styling */
-#fishContainer,
-#locationContainer {
-    background-color: #fff;
+#fishSection, #locationSection {
+    background-color: #f9f9f9;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#fishList,
-#locationList {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+#fishSection h2, #locationSection h2, #tipSection h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
-/* Styling for the tip container */
-#tipContainer {
+#fishList, #locationList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#tipSection {
     flex: 1;
     background-color: #f9f9f9;
     padding: 20px;
@@ -65,9 +55,13 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#tipList .tips {
+#tipList {
     padding-left: 0;
     list-style-type: none;
+}
+
+#tipList .tips {
+    padding: 0;
 }
 
 #tipList .tip {
@@ -79,8 +73,26 @@ main {
     padding: 10px;
 }
 
-#fishContainer h2,
-#locationContainer h2,
-#tipContainer h2 {
+.card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-width: 150px; /* Adjust this to make images bigger or smaller */
+    margin-bottom: 10px;
+}
+
+.card h2 {
     margin-top: 0;
+}
+
+.card p {
+    margin: 5px 0;
 }
